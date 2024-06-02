@@ -26,6 +26,41 @@ Being in `src` folder run command `make gcov_report`
 
 To open library documentation run command `dvi_open`
 
+## App instructions
+
+### Opening file
+
+1) Choose type of file you want to load and push button "Open"
+![open](misc/images/open.png)
+
+### Maze's shortest path finding
+
+1) Choose type of file (Maze or MazeML) you want to load and push button "Open".
+
+2) Choose input point by left button mouse click. It is green color square.
+
+3) In simple maze case choose output point by right button mouse click. It is blue color square.
+
+4) Push button "Resolve" to find shortest path between two points.
+
+### Maze generation
+
+Specify cols and rows parameters and push "Generate maze file" button.
+
+### Cave file generation 
+
+Specify initialization chance parameter and push "Generate cave file"
+
+### Cave generation
+
+1) Choose cave type of file and push button "Open".
+
+2) Specify life and death limit parameters.
+
+3) To generate one step of cave push "Step cave generation"
+
+4) To generate cave automatically specify upload cave time interval and push "Start cave generation". If you want stop generation push "Stop cave generation". You can change parameters and continiue generation.
+
 ## Some theory
 
 A maze with "thin walls" is a table of _n_ rows by _m_ columns size. There may be "walls" between the cells of a table. The table as a whole is also surrounded by "walls".
@@ -104,10 +139,10 @@ A loop is a part of the maze with passages that can be walked in "circles". The 
 
 In many games there is a need for branching locations, such as caves.
 They can be created by generation using the cellular automaton.
-The idea of the proposed algorithm consists of implementing only two steps: first, the whole field is filled randomly with walls - i.e., for each cell it is randomly determined whether it will be free or impassable - and then the map state is updated several times according to the conditions.
+The idea of the proposed algorithm consists of implementing only two steps: first, the whole field is filled randomly with walls - i.e., for each cell it is randomly determined whether it will be free or impassable (chance parameter) - and then the map state is updated several times according to the conditions.
 
-There are two special variables, one for "birth" of "dead" cells (the "birth" limit) and one for destruction of "live" cells (the "death" limit).
-If "live" cells are surrounded by "live" cells, the number of which is less than the "death" limit, they "die". In the same way, if "dead" cells are next to "live" cells, the number of which is greater than the "birth" limit, they become "live".
+There are two special variables, one for "life" of "death" cells (the "life" limit) and one for destruction of "live" cells (the "death" limit).
+If "live" cells are surrounded by "live" cells, the number of which is less than the "death" limit, they "die". In the same way, if "death" cells are next to "live" cells, the number of which is greater than the "life" limit, they become "live".
 
 An example of the algorithm's result (the first picture shows only the initialized maze, and the second picture shows a maze in which there are no more changes in subsequent steps): \
 ![cave1](misc/images/cave1.jpg)
@@ -128,10 +163,3 @@ An example of such a file:
 
 The cave described in this file: \
 ![cave3](misc/images/cave3.jpg)
-
-## App explementation
-
-- Maximum size of the maze is
-  50x50
-- The loaded maze must be rendered on the screen in a field of 500 x 500 pixels
-- "Wall" thickness is 2 pixels
