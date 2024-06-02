@@ -2,6 +2,9 @@
 
 Implemetation of the basic algorithms of Maze and Cave handling (generation, rendering, solving) and ML algorithm (Q-learning method) for teaching an agent the shortest passage of mazes.
 
+![CPP_Maze](https://github.com/Colonka/Algos1-Maze-Cave/assets/128917856/e0b737a0-7ca9-43c4-9ba4-769223e03a02)
+
+
 ## Introduction
 
 In this project I've developed desktop app which allow Maze and Cave handling such as generation, rendering, solving. In addition to I've implemented ML algorithm (Q-learning method) for teaching an agent the shortest passage of mazes. GUI developed by Qt 6.5.
