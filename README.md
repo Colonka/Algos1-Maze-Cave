@@ -123,7 +123,7 @@ An example of such a file:
 ```
 
 The maze described in this file:  \
-![maze_ML](misc/images/mazeML.png)
+![maze_ML](misc/images/MazeML.png)
 
 ## Flaws in mazes
 
