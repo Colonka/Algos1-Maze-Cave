@@ -110,7 +110,7 @@ Maze ML file similary to simple maze file but only one diffirent : after string 
 An example of such a file:
 ```
 4 4 // number of rows and columns
-3 2 // cols == 3, rows == 2
+3 2 // output point (cols == 3, rows == 2)
 0 0 0 1
 1 0 1 1
 0 1 0 1
