@@ -47,7 +47,7 @@ To open library documentation run command `dvi_open`
 
 Specify cols and rows parameters and push "Generate maze file" button.
 
-### Cave file generation 
+### Cave file generation
 
 Specify initialization chance parameter and push "Generate cave file"
 
