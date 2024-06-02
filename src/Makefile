@@ -1,15 +1,15 @@
 ARCHIVE = CPP_MAZE
 
-all: install run
+all: install
 
-test: clean
+test:
 	mkdir build
 	cmake -S ./ -B build -DMAZE_TESTING=ON
 	cmake --build build --target check
 
-install: clean
+install:
 	mkdir -p build
-	cmake -S ./ -B build
+	cmake -S ./ -B build -DMAZE_TESTING=OFF
 	cmake --build build
 
 run:
@@ -29,12 +29,12 @@ dvi: clean
 dvi_open:
 	open docs/html/index.html
 
-dist: clean install
+dist: install
 	tar -cf $(ARCHIVE).tar build/*
 
-gcovr_report: clean
-	mkdir build
-	mkdir report
+gcov_report:
+	mkdir -p build
+	mkdir -p report
 	cmake -S ./ -B build -DMAZE_TESTING=ON -DMAZE_COVERAGE=ON
 	cmake --build build --target coverage
 	open report/report.html
@@ -44,12 +44,12 @@ git: clean
 	git commit -m "$m"
 	git push origin "$b"
 
-test_no_run: clean
-	mkdir build
+test_no_run:
+	mkdir -p build
 	cmake -S ./ -B build -DMAZE_TESTING=ON
 	cmake --build build
 
-check: clean test_no_run
+check: test_no_run
 	cd build/test && leaks --atExit -- ./CPP_MAZE_test
 
 clean:
